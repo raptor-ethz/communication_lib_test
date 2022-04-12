@@ -1,0 +1,4 @@
+/home/aurel/github_repos/comm_lib_test/build/CMakeFiles/publisher.dir
+/home/aurel/github_repos/comm_lib_test/build/CMakeFiles/subscriber.dir
+/home/aurel/github_repos/comm_lib_test/build/CMakeFiles/edit_cache.dir
+/home/aurel/github_repos/comm_lib_test/build/CMakeFiles/rebuild_cache.dir
