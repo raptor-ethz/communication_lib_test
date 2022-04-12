@@ -1,9 +1,0 @@
-# ninja log v5
-1	98	1649759689077113132	subscriber	31e9055b2e94cb34
-1	98	1649759689077113132	publisher	60b36c1a176057cc
-0	310	1649759634804370740	CMakeFiles/comm_lib_test.dir/app/publisher.cpp.o	68baf04a6998008c
-0	318	1649759634812370850	CMakeFiles/comm_lib_test.dir/app/subscriber.cpp.o	29c722819bbaf143
-0	420	1649759668628833422	CMakeFiles/publisher.dir/app/publisher.cpp.o	844908fea55376ea
-1	420	1649759668628833422	CMakeFiles/subscriber.dir/app/publisher.cpp.o	42e6aa7429ed0b26
-0	425	1649759668632833477	CMakeFiles/subscriber.dir/app/subscriber.cpp.o	c3f7785f5c85cb80
-0	450	1649759668660833860	CMakeFiles/publisher.dir/app/subscriber.cpp.o	b5047286ae647ace
