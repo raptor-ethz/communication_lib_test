@@ -7,26 +7,32 @@ find_package(fastcdr REQUIRED)
 find_package(fastrtps REQUIRED)
 
 
-#add_subdirectory(lib)
+add_subdirectory(lib/communication_lib)
 
 #publisher application:
-add_executable(publisher
-app/publisher.cpp
+add_executable(publisher_test
+app/publisher_test.cpp
 )
-
-#subscriber application:
-add_executable(subscriber
-app/subscriber.cpp
+target_link_libraries(publisher_test PRIVATE
+comm_lib
 )
-
-
-# target_link_libraries(comm_lib_test PRIVATE
-# comm_lib
-# )
 
 # Third party dependencies
-# target_link_libraries(mocap_publisher PRIVATE
-# ViconDataStreamSDK_lib
-# fastcdr 
-# fastrtps
-# )
+target_link_libraries(publisher_test PRIVATE
+fastcdr 
+fastrtps
+)
+
+#subscriber application
+add_executable(subscriber_test
+app/subscriber_test.cpp
+)
+target_link_libraries(subscriber_test PRIVATE
+comm_lib
+)
+
+# Third party dependencies
+target_link_libraries(subscriber_test PRIVATE
+fastcdr 
+fastrtps
+)
