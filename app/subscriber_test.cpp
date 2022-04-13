@@ -24,8 +24,7 @@ int main(int argc, char *argv[])
 
     while (true)
     {
-        std::cout
-            << "x:\t" << sub::msg.segment_x[2] << std::endl; //"\t y:\t" << sub::msg.segment[0].y << "\t z:\t" << sub::msg.segment[0].z << std::endl;
+        std::cout << "x:\t" << sub::msg.segment_x[2] << std::endl; //"\t y:\t" << sub::msg.segment[0].y << "\t z:\t" << sub::msg.segment[0].z << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(250));
     }
 }
