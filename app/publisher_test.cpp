@@ -5,12 +5,12 @@
 #include "domain_participant.h"
 #include "publisher.h"
 
-#include "MocapSegments_msg.h"
-#include "MocapSegments_msgPubSubTypes.h"
+#include "MocapMarker_msg.h"
+#include "MocapMarker_msgPubSubTypes.h"
 
 namespace pub
 {
-    cpp_msg::MocapSegments_msg msg;
+    cpp_msg::MocapMarker_msg msg;
 }
 
 int main(int argc, char *argv[])
@@ -19,23 +19,47 @@ int main(int argc, char *argv[])
     DefaultParticipant dp(0, "publisher_test");
 
     // create publisher
-    DDSPublisher publisher(idl_msg::MocapSegments_msgPubSubType(),
+    DDSPublisher publisher(idl_msg::MocapMarker_msgPubSubType(),
                            "test", dp.participant());
 
     // define message
-    pub::msg.object_name = "test_object";
+    pub::msg.object_name = "obstacle1";
 
-    pub::msg.segment_x[0] = 1;
-    pub::msg.segment_y[0] = 1;
-    pub::msg.segment_z[0] = 1;
+    // under layer
+    pub::msg.marker_x[0] = 1;
+    pub::msg.marker_y[0] = 0;
+    pub::msg.marker_z[0] = 0;
 
-    pub::msg.segment_x[1] = 2;
-    pub::msg.segment_y[1] = 2;
-    pub::msg.segment_z[1] = 2;
+    pub::msg.marker_x[1] = 2;
+    pub::msg.marker_y[1] = 0;
+    pub::msg.marker_z[1] = 0;
 
-    pub::msg.segment_x[2] = 3;
-    pub::msg.segment_y[2] = 3;
-    pub::msg.segment_z[2] = 3;
+    pub::msg.marker_x[2] = 1;
+    pub::msg.marker_y[2] = 2;
+    pub::msg.marker_z[2] = 0;
+
+    pub::msg.marker_x[3] = 2;
+    pub::msg.marker_y[3] = 2;
+    pub::msg.marker_z[3] = 0;
+
+    // upper layer
+    pub::msg.marker_x[4] = 1;
+    pub::msg.marker_y[4] = 0;
+    pub::msg.marker_z[4] = 2;
+
+    pub::msg.marker_x[5] = 2;
+    pub::msg.marker_y[5] = 0;
+    pub::msg.marker_z[5] = 2;
+
+    pub::msg.marker_x[6] = 1;
+    pub::msg.marker_y[6] = 2;
+    pub::msg.marker_z[6] = 2;
+
+    pub::msg.marker_x[7] = 2;
+    pub::msg.marker_y[7] = 2;
+    pub::msg.marker_z[7] = 2;
+
+    pub::msg.length = 8;
 
     while (true)
     {
