@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     // create publisher
     DDSPublisher publisher(idl_msg::MocapMarker_msgPubSubType(),
-                           "test", dp.participant());
+                           "mocap_markers_srl_obstacle", dp.participant());
 
     // define message
     pub::msg.object_name = "obstacle1";
@@ -64,6 +64,7 @@ int main(int argc, char *argv[])
     while (true)
     {
         publisher.publish(pub::msg);
+        std::cout << "publishing" << std::endl;
         std::this_thread::sleep_for(std::chrono::milliseconds(250));
     }
 }
